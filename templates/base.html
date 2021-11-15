@@ -11,9 +11,39 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Document</title>
+    <title>CookBook</title>
 </head>
 <body>
+
+    <header>
+        <!-- top navbar -->
+        <nav class="nav-extended text-shadow #546e7a blue-grey darken-1">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">MENU</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+					<li><a href="#">New Recipe</a></li>
+					<li><a href="#">Manage</a></li>
+					<li><a href="#">Log Out</a></li>
+                    <li><a href="#">Log In</a></li>
+					<li><a href="#">Register</a></li>
+				    
+              </ul>
+            </div>
+          </nav>
+        
+          <!-- mobile side navbar-->
+                    <ul class="sidenav" id="mobile-demo">
+                <li><h4 class="center-align light-grey-text text-darken 4">Task Manager</h4></li>
+                <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+				<li><a href="#">New Recipe</a></li>
+				<li><a href="#">Manage</a></li>
+				<li><a href="#">Log Out</a></li>
+                <li><a href="#">Log In</a></li>
+				<li><a href="#">Register</a></li>
+          </ul>
+    </header>
 
     {% block content %}
     {% endblock %}
