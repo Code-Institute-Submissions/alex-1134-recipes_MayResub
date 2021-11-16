@@ -1,1 +1,26 @@
-fdgdgdfg
+{% extends "base.html" %}
+{% block content %}
+
+    {% for recipe in recipes %}
+        {{ recipe.recipe_name }}<br>
+        {{ recipe.ingredients}}<br>
+        {{ recipe.cooking_time }}<br>
+        {{ recipe.prep }}<br>
+    {% endfor %}
+
+    <ul class="collapsible popout">
+        {% for recipe in recipes %}
+        <li>
+            <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+                <i class="fas fa-caret-down"></i>
+                <strong>{{ recipe.recipe_name }}</strong> : {{ recipe.cooking_time }}
+            </div>
+            <div class="collapsible-body">
+                <span>{{ recipe.ingredients}}</span>
+                <p>{{ recipe.prep }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
