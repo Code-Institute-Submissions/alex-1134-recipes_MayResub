@@ -21,8 +21,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+    get_recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", get_recipes=get_recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -96,6 +96,11 @@ def logout():
     flash("You are now logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/new_recipe")
+def new_recipe():
+    return render_template("new_recipe.html")
 
 
 if __name__ == "__main__":
