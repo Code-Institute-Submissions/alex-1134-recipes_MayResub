@@ -1,12 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for recipe in recipes %}
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.ingredients}}<br>
-        {{ recipe.cooking_time }}<br>
-        {{ recipe.prep }}<br>
-    {% endfor %}
+    
 
     <ul class="collapsible popout">
         {% for recipe in recipes %}
