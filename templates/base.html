@@ -24,7 +24,7 @@
               <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
 					<li><a href="#">New Recipe</a></li>
-					<li><a href="#">Manage</a></li>
+					<li><a href="{{ url_for('profile', username=session['user']) }}">Account</a></li>
 					<li><a href="#">Log Out</a></li>
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
 					<li><a href="{{ url_for('register') }}">Register</a></li>
@@ -38,7 +38,7 @@
                 <li><h4 class="center-align light-grey-text text-darken 4">Task Manager</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
 				<li><a href="#">New Recipe</a></li>
-				<li><a href="#">Manage</a></li>
+				<li><a href="{{ url_for('profile', username=session['user']) }}">Account</a></li>
 				<li><a href="#">Log Out</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
 				<li><a href="{{ url_for('register') }}">Register</a></li>
