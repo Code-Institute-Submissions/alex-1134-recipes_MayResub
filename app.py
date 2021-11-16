@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     get_recipes = list(mongo.db.recipes.find())
-    return render_template("get_recipes.html", get_recipes=recipes)
+    return render_template("get_recipes.html", get_recipes=get_recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -46,6 +46,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Congrats! You're in!")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
