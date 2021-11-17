@@ -5,9 +5,17 @@
         {% for recipe in recipes %}
         <li>
             <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                <i class="fas fa-caret-down"></i>
-                <strong>{{ recipe.recipe_name }}</strong> : {{ recipe.cooking_time }}
+                <div class="col 3">
+                    <i class="fas fa-caret-down"></i>
+                    <a href="" class="waves-effect waves-light btn-small green">Done</a>
+                    <a href="" class="waves-effect waves-light btn-small blue" >Edit</a>
+                </div>
+
+                <div class="col 9">
+                    <strong>{{ recipe.recipe_name }}</strong> : {{ recipe.cooking_time }}
             </div>
+                </div>
+                
             <div class="collapsible-body">
                 <span>{{ recipe.ingredients}}</span>
                 <p>{{ recipe.prep }}</p>
