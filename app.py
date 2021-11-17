@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     get_recipes = list(mongo.db.recipes.find())
-    return render_template("get_recipes.html", get_recipes=get_recipes)
+    return render_template("get_recipes.html", recipes=get_recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -111,9 +111,9 @@ def new_recipe():
     if request.method == "POST":
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
-            "ingredients": request.form.get("ingredients"),
+            "ingredients": request.form.get("ingredients").splitlines(),
             "cooking_time": request.form.get("cooking_time"),
-            "prep": request.form.get("prep"),
+            "prep": request.form.get("prep").splitlines(),
             "categories": request.form.get("categories")
         }
         mongo.db.recipes.insert_one(recipe)
@@ -124,12 +124,12 @@ def new_recipe():
     return render_template("new_recipe.html", categories=categories)
 
 
-@app.route("/profile/<recipe_id>", methods=["GET", "POST"])
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     categories = mongo.db.categories.find().sort("categories", 1)
-    return render_template("profile.html", recipe=recipe, categories=categories)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 
 if __name__ == "__main__":
