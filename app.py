@@ -25,6 +25,14 @@ def get_recipes():
     return render_template("get_recipes.html", get_recipes=get_recipes)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    get_recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    ,return render_template("get_recipes.html", get_recipes=get_recipes)
+
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -62,7 +70,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
+                    flash("Welcome, {}".format( 
                         request.form.get("username")))
                     return redirect(url_for(
                         "profile", username=session["user"]))
@@ -107,14 +115,24 @@ def new_recipe():
             "ingredients": request.form.get("ingredients"),
             "cooking_time": request.form.get("cooking_time"),
             "prep": request.form.get("prep"),
-            "category": request.form.get("category")
+            "categories": request.form.get("categories")
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe added!")
         return redirect(url_for("get_recipes"))
 
-    category = mongo.db.category.find().sort("category", 1)
-    return render_template("new_recipe.html", category=category) # might wanna remove categories <= comment for alex
+    categories = mongo.db.categories.find().sort("categories", 1)
+    return render_template(
+        "new_recipe.html", categories=categories)
+        # might wanna remove categories <= comment for alex   
+    
+
+@app.route("/profile/<recipe_id>", methods=["GET", "POST"]) # WHAAAAAATTT ???????
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    categories = mongo.db.categories.find().sort("categories", 1)
+    return render_template("profile.html", recipe=recipe, categories=categories)
 
 
 if __name__ == "__main__":
