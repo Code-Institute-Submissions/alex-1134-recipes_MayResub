@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h3>Recipes</h3>
+
     <ul class="collapsible popout">
         {% for recipe in recipes %}
         <li>
@@ -13,11 +15,11 @@
 
                 <div class="col 9">
                     <strong>{{ recipe.recipe_name }}</strong> : {{ recipe.cooking_time }}
-            </div>
                 </div>
+            </div>
                 
             <div class="collapsible-body">
-                <span>{{ recipe.ingredients}}</span>
+                <em>{{ recipe.ingredients}}</em>
                 <p>{{ recipe.prep }}</p>
             </div>
         </li>
