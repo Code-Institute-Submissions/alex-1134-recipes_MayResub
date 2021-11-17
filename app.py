@@ -29,8 +29,7 @@ def get_recipes():
 def search():
     query = request.form.get("query")
     get_recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    ,return render_template("get_recipes.html", get_recipes=get_recipes)
-
+    return render_template("get_recipes.html", get_recipes=get_recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -122,12 +121,10 @@ def new_recipe():
         return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find().sort("categories", 1)
-    return render_template(
-        "new_recipe.html", categories=categories)
-        # might wanna remove categories <= comment for alex   
-    
+    return render_template("new_recipe.html", categories=categories)
 
-@app.route("/profile/<recipe_id>", methods=["GET", "POST"]) # WHAAAAAATTT ???????
+
+@app.route("/profile/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
