@@ -1,5 +1,8 @@
 body {
     background-color: blanchedalmond;
+    background-image: url(../images/veggies-2.png);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
 }
 
 .text-shadow {
@@ -8,6 +11,10 @@ body {
 
 .flashes h4 {
     line-height: 2;
+}
+
+.brand-logo {
+    left: 30px;
 }
 
 
