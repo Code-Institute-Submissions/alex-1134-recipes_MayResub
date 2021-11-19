@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     get_recipes = list(mongo.db.recipes.find())
-    return render_template("get_recipes.html", recipes=get_recipes)
+    return render_template("get_recipes.html", get_recipes=get_recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -129,12 +129,10 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     categories = mongo.db.categories.find().sort("categories", 1)
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+    return render_template("edit_recipe.html", get_recipes=get_recipes, categories=categories)
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-

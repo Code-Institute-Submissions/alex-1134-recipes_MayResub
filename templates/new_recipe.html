@@ -6,25 +6,19 @@
     <!-- Dropdown menu with meal categories -->
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('new_recipe') }}">
+            
+            <div class="row">
             <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
                     <select multiple id="category" name="category" class="validate" required>
                         <option value="" disabled selected>Choose Categories</option>
                         {% for category in categories %}
                             <option value="{{ category.category }}">{{ category.category }}</option> <!-- REMOVE IF NOT USED -->
                         {% endfor %}
-
-                        <!-- Multiple categories for meals to choose from-->
-                        <option value="1">Breakfast</option>
-                        <option value="2">Brunch</option>
-                        <option value="3">Lunch</option>
-                        <option value="4">Dinner</option>
-                        <option value="5">Supper</option>
-                        <option value="6">Savoury</option>
-                        <option value="7">Sweet</option>
                     </select>
                     <label>Recipe Categories</label>
               </div>
-
+            </div>
                 <!-- recipe name -->
                 <div class="row">
                     <div class="input-field col s12">
