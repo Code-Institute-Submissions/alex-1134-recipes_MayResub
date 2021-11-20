@@ -5,7 +5,7 @@ The aim of this project is to design and build a front- and back-end interactive
 ## Cook Book
 The application is a website with recipes where users, after creating an account and logging in, can add their own recipes to the website. They can also alter and / or delete their recipes. Any unlogged user has access to the recipes (read only).
 
-You can view the deployed game [here]
+You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
 
 
 ## User Experience(UX)
@@ -32,12 +32,13 @@ You can view the deployed game [here]
     1. Color Scheme
 
         Warm colours are used to make sure that the user gets a "cosy", welcoming feeling visiting the website.
-        The background picture presents vegetables only, a neutral kind of food which will encourage people on aall kinds of diets and does not make anyone feel exluded or discouraged (like, for example, vegans).
+        The background picture presents vegetables only, a neutral kind of food which will encourage people on all kinds of diets and does not make anyone feel exluded or discouraged (for example vegans).
 
 
 * ### Wireframes
 
-* ### Mockups
+* [1](static/images/wire-1.jpg)
+* [2](static/images/wire-2.jpg)
 
 ## Features
 
@@ -75,18 +76,18 @@ You can view the deployed game [here]
 
     You can see the test results below:
 
-
-    There were some things missing 
-
-
+     * [Test 1](static/images/validate-1.png)
+     * [Test 2](static/images/validate-2.png)
+     * [Test 3](static/images/validate-3.png)
+    
 
 ## Browser Compatibility Testing
   
-   * The Website was tested on Google Chrome, Safari, Internet Explorer and Firefox browsres.
+   * The Website was tested on Google Chrome, Safari, Internet Explorer and Firefox browsers.
 
    * It was also viewed on different devices such as PCs, mobile phones, different models of iPhones, tablets, iPads and laptops.
 
-   * Hyperlinks were tested......................................
+   * Hyperlinks were tested
 
    * Family and friends added some recipes / reviewed the site to make sure the author did not miss any bugs or problems and that 
      the website is intuitive and easy to use / navigate through.
@@ -97,23 +98,24 @@ You can view the deployed game [here]
 
   In order to make sure that everything works fine on the website a series of tests was conducted:
 
-   * Every picture in both games was clicked on to make sure it works
-   * Every picture in both games was double-clicked on to make sure that id does not hide back
-   * As many pictures as possible were quickly clicked on to make sure that no more than two photos could be visible at the same time
-   * All hyperlinks were also checked
+   * Every link in both Logged In / Logged Out option was checked
+   * Recipes were added
+   * Every link on the page was clicked on to make sure they work
 
    All tests were passed.
 
 ### Existing Bugs
 
-  
+There is a problem with adding recipes which is connected to Materialize - to add steps in Add Recipe, you have to click on "Add" in order to be able to fill in spaces.
 
 ### Problems
+
+Testing the HTML showed many errors, but their nature was like using " {} " so I ignored them since the app is working well on all devices and testing environments.
 
 
 ## Deployment
 
-  The website was deployed on Heroku. In order to do so, I logged into my GitHub account, found the repository (memory_game_milestone) and followed the deployment steps.
+  The website was deployed on Heroku. In order to do so, I logged into my GitHub account, found the repository and then connected my GitHub account to my Heroku account and deployed it from there
 
   In order to clone this project and run it locally: 
    * log into GitHub account (using Chrome) 
@@ -125,14 +127,27 @@ You can view the deployed game [here]
 
 ## Future Features
 
-  
+* UX improvements for readability
+* Saved recipes in profile
+* Sharing fucntion to social media
 
 
 ## Credits
 
+To create my code I followed the Mini Project from Code Institute and also I watched the tutorials listed below.
+Recipes come from the links below
+    
+    
+    https://www.youtube.com/watch?v=ofme2o29ngU
+    https://www.youtube.com/watch?v=-56x56UppqQ
+    https://www.youtube.com/watch?v=BBu6ZoAHIwI
 
-        https://www.loveandlemons.com/vegan-recipes/
+    https://www.jamieoliver.com/recipes/category/special-diets/vegan/
+    https://www.veggioke.com/vegetarian-recipes/fried-rice-with-vegetables-recipe/
+    https://www.loveandlemons.com/vegan-recipes/
+    https://www.veggioke.com/vegetarian-recipes/fried-rice-with-vegetables-recipe/
 
+    Photo credit: https://unsplash.com/
 
 
 
