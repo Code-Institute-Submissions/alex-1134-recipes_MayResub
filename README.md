@@ -10,7 +10,7 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
 
 ## User Experience(UX)
 
-     ### User Stories
+### User Stories
 
         1. First Time Visitors Goals:
         
@@ -59,7 +59,7 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
     Jinja
 
 
-    ### Languages Used
+ ### Languages Used
 
         * HTML
         * CSS
