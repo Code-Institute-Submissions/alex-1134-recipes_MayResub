@@ -10,7 +10,7 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
 
 ## User Experience(UX)
 
-    * ### User Stories
+     ### User Stories
 
         1. First Time Visitors Goals:
         
@@ -27,7 +27,7 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
             c. A Returning Visitor (3) will come back for both options 1 and 2. 
 
 
-* ### Design
+ ### Design
 
     1. Color Scheme
 
@@ -35,7 +35,7 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
         The background picture presents vegetables only, a neutral kind of food which will encourage people on all kinds of diets and does not make anyone feel exluded or discouraged (for example vegans).
 
 
-* ### Wireframes
+### Wireframes
 
 * [1](static/images/wire-1.jpg)
 * [2](static/images/wire-2.jpg)
