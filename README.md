@@ -42,8 +42,8 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
 
 ## Features
 
-     * Responsive on all device sizes.
-     * Interactive elements, will serve its purpose with or without the user's input and engagement.
+* Responsive on all device sizes.
+* Interactive elements, will serve its purpose with or without the user's input and engagement.
 
 
 ## Technologies used
