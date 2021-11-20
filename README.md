@@ -61,18 +61,18 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
 
  ### Languages Used
 
-        * HTML
-        * CSS
-        * JAVASCRIPT
-        * Python
+* HTML
+* CSS
+ * JAVASCRIPT
+ * Python
 
 ## Code Testing
 
     All the code was tested for errors by the following code validators:
 
-    * W3C
-    * w3C CSS
-    * JSHint
+* W3C
+* w3C CSS
+* JSHint
 
     You can see the test results below:
 
