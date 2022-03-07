@@ -37,7 +37,7 @@
           </nav>
         
           <!-- mobile sidenav-->
-                    <ul class="sidenav" id="mobile-demo">
+            <ul class="sidenav" id="mobile-demo">
                 <li><h4 class="center-align light-grey-text text-darken 4">Task Manager</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                 {% if session.user  %}
@@ -48,7 +48,7 @@
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
 					<li><a href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}
-          </ul>
+            </ul>
     </header>
 
     <section>

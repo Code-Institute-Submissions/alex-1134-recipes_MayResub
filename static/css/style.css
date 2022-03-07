@@ -16,3 +16,53 @@ body {
 .brand-logo {
     left: 30px;
 }
+
+
+/*.......................... search bar & delete, edit buttons */
+
+.btn-search {
+    color: white;
+    background: #36454f;
+    border-radius: 5%;
+}
+
+.btn-reset {
+    color: white;
+    background: #c4aead;
+    border-radius: 5%;
+}
+
+.btn-edit {
+    background: white;
+    color: #36454f; !important
+    border-radius: 5%;
+}
+
+
+/* .......................... nav bar */
+
+.nav-wrapper {
+    color: white;
+    background: #acacac;
+    text-transform: uppercase;
+    border-radius: 5%;
+}
+
+.page-title {
+    text-transform: uppercase;
+    color: black;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.text-link{
+    color: #343434;
+}
+
+.text-home {
+    color: white;
+    background: #acacac;
+    border-radius: 5%;
+}

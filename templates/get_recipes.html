@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Recipes</h3>
+<h5 class="page-title center-align">Welcome to the special CookBook which you can be a part of too!</h5>
+<h6 class="page-title center-align">Add and edit your favourite food recipes!</h6>
+
+    <h3 class="page-title center-align">Recipes</h3>
 
     <div class="row card-panel blue lighten-5">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
@@ -12,15 +15,13 @@
                     <label for="query">Search Recipes</label>
                 </div>
                 <div class="col s12 m4">
-                    <a href="{{ url_for('get_recipes') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="light-lime darken-1 btn text-shadow">
-                        <i class="fas fa-search left">Search</i>
-                    </button>
+                    <a href="{{ url_for('get_recipes') }}" class="btn btn-reset">Reset</a>
+                    <button type="submit" class="btn btn-search"><i class="fas fa-search left">Search</i></button> <!-- light-lime darken-1  text-shadow -->
                 </div>
             </div>
         </form>
     </div> 
-
+    
     <!-- recipes menu-->
     <ul class="collapsible popout">
         {% for recipe in get_recipes %} 
@@ -29,8 +30,8 @@
                 <div class="col 3">
                     <i class="fas fa-caret-down"></i>
                     {% if session.user|lower != recipe.created_by|lower %}
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red accent-4">Delete</a>
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small btn-reset accent-4">Delete</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small btn-edit">Edit</a>
                 {% endif %}      
                     
                 </div>
@@ -47,6 +48,5 @@
         </li>
         {% endfor %}
     </ul>
-
 
 {% endblock %}
