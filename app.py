@@ -67,11 +67,11 @@ def login():
         if existing_user:
             # make sure that hashed password matches user's input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format( 
-                        request.form.get("username")))
-                    return redirect(url_for(
+            existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format( 
+                    request.form.get("username")))
+                return redirect(url_for(
                         "profile", username=session["user"]))
             else:
                 # in case of invalid password
@@ -133,11 +133,11 @@ def edit_recipe(recipe_id):
             "prep": request.form.get("prep"),
             "categories": request.form.get("categories")
             }
-        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
-        flash("Task Successfully Updated")
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},{"$set": submit}, upsert=False,)
+        flash("Your recipe has been changed!")
 
-    recipe = mongo.db.tasks.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find().sort("categories", 1)
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 
