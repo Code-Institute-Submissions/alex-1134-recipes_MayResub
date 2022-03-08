@@ -3,7 +3,6 @@ certifi==2019.11.28
 chardet==3.0.4
 click==8.0.4
 configobj==5.0.6
-dbus-python==1.2.16
 dnspython==2.2.0
 dulwich==0.19.15
 fastimport==0.9.8
