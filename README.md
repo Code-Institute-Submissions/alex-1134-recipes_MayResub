@@ -144,8 +144,9 @@ There were many errors pointed out by the Assessor in new_recipe.html - they wer
    * log into GitHub account (using Chrome) 
    * install Gitpod extensions for Chrome 
    * restart the browser
-   * go to the project's repository
-   * click on the green Gitpod button - this will open a new workspace that will enable to work on the code locally
+   * find the repository on GitHub
+   * go to into the repository
+   * click on the green "Gitpod" button - this will open a new workspace that will enable to work on the code locally
 
 
 ## Future Features
