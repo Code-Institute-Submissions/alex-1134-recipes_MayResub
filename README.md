@@ -106,16 +106,39 @@ You can view the deployed website [here](https://recipes-1134.herokuapp.com/)
 
 ### Existing Bugs
 
-There is a problem with adding recipes which is connected to Materialize - to add steps in Add Recipe, you have to click on "Add" in order to be able to fill in spaces.
+_There is a problem with adding recipes which is connected to Materialize - to add steps in Add Recipe, you have to click on "Add" in order to be able to fill in spaces._ <- This bug was fixed.
 
 ### Problems
 
-Testing the HTML showed many errors, but their nature was like using " {} " so I ignored them since the app is working well on all devices and testing environments.
+_Testing the HTML showed many errors, but their nature was like using " {} " so I ignored them since the app is working well on all devices and testing environments._ 
+
+There were many errors pointed out by the Assessor in new_recipe.html - they were all fixed.
+* [Fixed HTML](static/images/fixed-html.png)
 
 
 ## Deployment
 
-  The website was deployed on Heroku. In order to do so, I logged into my GitHub account, found the repository and then connected my GitHub account to my Heroku account and deployed it from there
+  The website was deployed on Heroku. In order to do so, the following steps were taken:
+
+  In the terminal of the project, type: 
+   * pip3 freeze --local > requirements.txt
+   * echo web: python app.py > Procfile 
+
+  Go to heroku.com:
+   * create an account on heroku.com
+   * create a new app by clicking “New”  button
+   * choose a name for your app and a region you are in
+   * click on "Connect to GitHub" button
+   * search for your username and repository and click "Connect"
+   * go to "Settings" and click on "Reveal Config Vars"
+   * fill in the IP, PORT, MONGO_DBNAME and SECRET_KEY fields with data from env.py
+   
+  Go back to the terminal and push the new files to GitHub.
+
+  Go back to Heroku:
+   * click on "Enable Automatic Deploys"
+   * choose a branch to deploy and click "Deploy Branch"
+
 
   In order to clone this project and run it locally: 
    * log into GitHub account (using Chrome) 
